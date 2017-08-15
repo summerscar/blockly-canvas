@@ -1,7 +1,6 @@
 Blockly.JavaScript['init_canvas'] = function(block) {
     let colour_color = block.getFieldValue('color');
     let number_globalalpha = block.getFieldValue('globalAlpha');
-    let dropdown_globalcompositeoperation_ = block.getFieldValue('globalCompositeOperation ');
     let text_x = block.getFieldValue('X');
     let text_y = block.getFieldValue('Y');
     let text_ratio = block.getFieldValue('ratio');
@@ -24,7 +23,6 @@ Blockly.JavaScript['init_canvas'] = function(block) {
     context.translate(${parseInt(text_x)},${parseInt(text_y)});
     context.globalAlpha = ${number_globalalpha};
     context.rotate(${text_ratio}*Math.PI/180);
-    context.globalcompositeoperation = '${dropdown_globalcompositeoperation_}';
     context.save();
     `;
     return code;
@@ -290,4 +288,12 @@ Blockly.JavaScript['addcolorstop'] = function(block) {
     let code = arr;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE]
+};
+Blockly.JavaScript['globalcompositeoperation'] = function(block) {
+    let dropdown_globalcompositeoperation_ = block.getFieldValue('globalCompositeOperation ');
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    context.globalcompositeoperation = "${dropdown_globalcompositeoperation_}";
+    `;
+    return code;
 };

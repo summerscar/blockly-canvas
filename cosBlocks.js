@@ -6,8 +6,6 @@ Blockly.Blocks['init_canvas'] = {
             .appendField(new Blockly.FieldColour("#ffffff"), "color")
             .appendField("全局透明")
             .appendField(new Blockly.FieldNumber(1, 0, 1, 0.01), "globalAlpha")
-            .appendField("合成方式")
-            .appendField(new Blockly.FieldDropdown([["source-over","source-over"], ["source-atop","source-atop"], ["source-in","source-in"], ["source-out","source-out"], ["destination-over","destination-over"], ["destination-atop","destination-atop"], ["destination-in","destination-in"], ["destination-out","destination-out"], ["lighter","lighter"], ["copy","copy"], ["xor","xor"]]), "globalCompositeOperation ")
             .appendField("中心点")
             .appendField(new Blockly.FieldTextInput("0"), "X")
             .appendField(new Blockly.FieldTextInput("0"), "Y")
@@ -547,6 +545,18 @@ Blockly.Blocks['createradialgradient'] = {
         this.setOutput(true, "Colour");
         this.setColour(30);
         this.setTooltip("生成径向渐变");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['globalcompositeoperation'] = {
+    init: function() {
+        this.appendDummyInput()
+            .appendField("合成形式")
+            .appendField(new Blockly.FieldDropdown([["source-over","source-over"], ["source-atop","source-atop"], ["source-in","source-in"], ["source-out","source-out"], ["destination-over","destination-over"], ["destination-atop","destination-atop"], ["destination-in","destination-in"], ["destination-out","destination-out"], ["lighter","lighter"], ["copy","copy"], ["xor","xor"]]), "globalCompositeOperation ");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
         this.setHelpUrl("");
     }
 };

@@ -3,12 +3,11 @@
 Blockly.JavaScript['init_canvas'] = function (block) {
     var colour_color = block.getFieldValue('color');
     var number_globalalpha = block.getFieldValue('globalAlpha');
-    var dropdown_globalcompositeoperation_ = block.getFieldValue('globalCompositeOperation ');
     var text_x = block.getFieldValue('X');
     var text_y = block.getFieldValue('Y');
     var text_ratio = block.getFieldValue('ratio');
     // TODO: Assemble JavaScript into code variable.
-    var code = '\n    let right = window.document.getElementById(\'right\');\n    let canvas = window.document.getElementById(\'canvas\');\n    let context = canvas.getContext("2d");\n    let devicePixelRatio = window.devicePixelRatio || 1; \n    let backingStoreRatio = context.webkitBackingStorePixelRatio ||\n        context.mozBackingStorePixelRatio ||\n        context.msBackingStorePixelRatio ||\n        context.oBackingStorePixelRatio ||\n        context.backingStorePixelRatio || 1;\n    let ratio = devicePixelRatio / backingStoreRatio;\n    canvas.width = right.clientWidth * ratio;\n    canvas.height = right.clientHeight * ratio; \n    canvas.style.backgroundColor = \'' + colour_color + '\';\n    context.clearRect(-canvas.width,-canvas.height, canvas.width,canvas.height)\n    context.translate(' + parseInt(text_x) + ',' + parseInt(text_y) + ');\n    context.globalAlpha = ' + number_globalalpha + ';\n    context.rotate(' + text_ratio + '*Math.PI/180);\n    context.globalcompositeoperation = \'' + dropdown_globalcompositeoperation_ + '\';\n    context.save();\n    ';
+    var code = '\n    let right = window.document.getElementById(\'right\');\n    let canvas = window.document.getElementById(\'canvas\');\n    let context = canvas.getContext("2d");\n    let devicePixelRatio = window.devicePixelRatio || 1; \n    let backingStoreRatio = context.webkitBackingStorePixelRatio ||\n        context.mozBackingStorePixelRatio ||\n        context.msBackingStorePixelRatio ||\n        context.oBackingStorePixelRatio ||\n        context.backingStorePixelRatio || 1;\n    let ratio = devicePixelRatio / backingStoreRatio;\n    canvas.width = right.clientWidth * ratio;\n    canvas.height = right.clientHeight * ratio; \n    canvas.style.backgroundColor = \'' + colour_color + '\';\n    context.clearRect(-canvas.width,-canvas.height, canvas.width,canvas.height)\n    context.translate(' + parseInt(text_x) + ',' + parseInt(text_y) + ');\n    context.globalAlpha = ' + number_globalalpha + ';\n    context.rotate(' + text_ratio + '*Math.PI/180);\n    context.save();\n    ';
     return code;
 };
 
@@ -202,5 +201,11 @@ Blockly.JavaScript['addcolorstop'] = function (block) {
     var code = arr;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['globalcompositeoperation'] = function (block) {
+    var dropdown_globalcompositeoperation_ = block.getFieldValue('globalCompositeOperation ');
+    // TODO: Assemble JavaScript into code variable.
+    var code = '\n    context.globalcompositeoperation = "' + dropdown_globalcompositeoperation_ + '";\n    ';
+    return code;
 };
 //# sourceMappingURL=canvasBlock.js.map
