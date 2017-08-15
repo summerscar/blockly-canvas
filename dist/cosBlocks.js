@@ -147,12 +147,13 @@ Blockly.Blocks['arcto'] = {
         this.setHelpUrl("http://www.runoob.com/tags/canvas-arcto.html");
     }
 };
-Blockly.Blocks['font'] = {
+Blockly.Blocks['fillfont'] = {
     init: function init() {
-        this.appendValueInput("font").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("文本");
+        this.appendValueInput("font").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("填充文本");
         this.appendValueInput("size").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("字体大小");
         this.appendValueInput("X").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("X");
         this.appendValueInput("Y").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
+        this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("颜色");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("字体").appendField(new Blockly.FieldDropdown([["Arial", "Arial"], ["Microsoft YaHei", "Microsoft YaHei"]]), "font");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["start", "start"], ["end", "end"], ["center", "center"], ["left", "left"], ["right", "right"]]), "textAlign");
@@ -199,6 +200,89 @@ Blockly.Blocks['translate'] = {
         this.setNextStatement(true, null);
         this.setColour(300);
         this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['strokefont'] = {
+    init: function init() {
+        this.appendValueInput("font").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("描边文本");
+        this.appendValueInput("size").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("字体大小");
+        this.appendValueInput("X").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("X");
+        this.appendValueInput("Y").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
+        this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("颜色");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("字体").appendField(new Blockly.FieldDropdown([["Arial", "Arial"], ["Microsoft YaHei", "Microsoft YaHei"]]), "font");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["start", "start"], ["end", "end"], ["center", "center"], ["left", "left"], ["right", "right"]]), "textAlign");
+        this.setInputsInline(false);
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['createlineargradient'] = {
+    init: function init() {
+        this.appendValueInput("createLinearGradient").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变");
+        this.appendValueInput("startX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startX");
+        this.appendValueInput("startY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startY");
+        this.appendValueInput("endX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endX");
+        this.appendValueInput("endY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endY");
+        this.setInputsInline(false);
+        this.setOutput(true, "Colour");
+        this.setColour(30);
+        this.setTooltip("生成线性渐变");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['createlineargradient'] = {
+    init: function init() {
+        this.appendValueInput("variable").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("变量输入");
+        this.appendValueInput("createLinearGradient1").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变1");
+        this.appendValueInput("createLinearGradient2").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变2");
+        this.appendValueInput("createLinearGradient3").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变3");
+        this.appendValueInput("createLinearGradient4").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变4");
+        this.appendValueInput("createLinearGradient5").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("线性渐变5");
+        this.appendValueInput("startX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startX");
+        this.appendValueInput("startY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startY");
+        this.appendValueInput("endX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endX");
+        this.appendValueInput("endY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endY");
+        this.setInputsInline(false);
+        this.setOutput(true, "Colour");
+        this.setColour(30);
+        this.setTooltip("生成线性渐变");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['addcolorstop'] = {
+    init: function init() {
+        this.appendValueInput("stop").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("stop");
+        this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("color");
+        this.setInputsInline(false);
+        this.setOutput(true, "addColorStop");
+        this.setColour(230);
+        this.setTooltip("stop\t介于 0.0 与 1.0 之间的值，表示渐变中开始与结束之间的位置。");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['createradialgradient'] = {
+    init: function init() {
+        this.appendValueInput("variable").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("变量输入");
+        this.appendValueInput("createRadialGradient1").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("径向渐变1");
+        this.appendValueInput("createRadialGradient2").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("径向渐变2");
+        this.appendValueInput("createRadialGradient3").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("径向渐变3");
+        this.appendValueInput("createRadialGradient4").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("径向渐变4");
+        this.appendValueInput("createRadialGradient5").setCheck("addColorStop").setAlign(Blockly.ALIGN_CENTRE).appendField("径向渐变5");
+        this.appendValueInput("startX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startX");
+        this.appendValueInput("startY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startY");
+        this.appendValueInput("startR").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("startR");
+        this.appendValueInput("endX").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endX");
+        this.appendValueInput("endY").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endY");
+        this.appendValueInput("endR").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("endR");
+        this.setInputsInline(false);
+        this.setOutput(true, "Colour");
+        this.setColour(30);
+        this.setTooltip("生成径向渐变");
         this.setHelpUrl("");
     }
 };

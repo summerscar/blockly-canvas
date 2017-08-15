@@ -10,12 +10,12 @@ Blockly.JavaScript['init_canvas'] = function(block) {
     let right = window.document.getElementById('right');
     let canvas = window.document.getElementById('canvas');
     let context = canvas.getContext("2d");
-    let devicePixelRatio = window.devicePixelRatio || 1; // 浏览器在渲染canvas之前存储画布信息的像素比
+    let devicePixelRatio = window.devicePixelRatio || 1; 
     let backingStoreRatio = context.webkitBackingStorePixelRatio ||
         context.mozBackingStorePixelRatio ||
         context.msBackingStorePixelRatio ||
         context.oBackingStorePixelRatio ||
-        context.backingStorePixelRatio || 1;// canvas的实际渲染倍率
+        context.backingStorePixelRatio || 1;
     let ratio = devicePixelRatio / backingStoreRatio;
     canvas.width = right.clientWidth * ratio;
     canvas.height = right.clientHeight * ratio; 
@@ -23,8 +23,8 @@ Blockly.JavaScript['init_canvas'] = function(block) {
     context.clearRect(-canvas.width,-canvas.height, canvas.width,canvas.height)
     context.translate(${parseInt(text_x)},${parseInt(text_y)});
     context.globalAlpha = ${number_globalalpha};
-    context.globalcompositeoperation = '${dropdown_globalcompositeoperation_}';
     context.rotate(${text_ratio}*Math.PI/180);
+    context.globalcompositeoperation = '${dropdown_globalcompositeoperation_}';
     context.save();
     `;
     return code;
@@ -164,11 +164,12 @@ Blockly.JavaScript['arcto'] = function(block) {
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
-Blockly.JavaScript['font'] = function(block) {
+Blockly.JavaScript['fillfont'] = function(block) {
     let value_font = Blockly.JavaScript.valueToCode(block, 'font', Blockly.JavaScript.ORDER_NONE);
     let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_NONE);
     let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
     let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
     let dropdown_font = block.getFieldValue('font');
     let dropdown_textbaseline_ = block.getFieldValue('textBaseline ');
     let dropdown_textalign = block.getFieldValue('textAlign');
@@ -177,7 +178,27 @@ Blockly.JavaScript['font'] = function(block) {
     context.textAlign="${dropdown_textalign}"; 
     context.textBaseline="${dropdown_textbaseline_}";
     context.font="${value_size}px ${dropdown_font}";
+    context.fillStyle = ${value_color};
     context.fillText(${value_font},${value_x},${value_y});
+    `;
+    return code;
+};
+Blockly.JavaScript['strokefont'] = function(block) {
+    let value_font = Blockly.JavaScript.valueToCode(block, 'font', Blockly.JavaScript.ORDER_NONE);
+    let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_NONE);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
+    let dropdown_font = block.getFieldValue('font');
+    let dropdown_textbaseline_ = block.getFieldValue('textBaseline ');
+    let dropdown_textalign = block.getFieldValue('textAlign');
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    context.textAlign="${dropdown_textalign}"; 
+    context.textBaseline="${dropdown_textbaseline_}";
+    context.font="${value_size}px ${dropdown_font}";
+    context.strokeStyle = ${value_color};
+    context.strokeText(${value_font},${value_x},${value_y});
     `;
     return code;
 };
@@ -206,4 +227,67 @@ Blockly.JavaScript['translate'] = function(block) {
     context.translate(${value_x},${value_y});
     `;
     return code;
+};
+Blockly.JavaScript['createlineargradient'] = function(block) {
+    let value_createlineargradient1 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient1', Blockly.JavaScript.ORDER_NONE);
+    let value_createlineargradient2 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient2', Blockly.JavaScript.ORDER_NONE);
+    let value_createlineargradient3 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient3', Blockly.JavaScript.ORDER_NONE);
+    let value_createlineargradient4 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient4', Blockly.JavaScript.ORDER_NONE);
+    let value_createlineargradient5 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient4', Blockly.JavaScript.ORDER_NONE);
+    let value_variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_NONE);
+    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_NONE);
+    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_NONE);
+    let value_endx = Blockly.JavaScript.valueToCode(block, 'endX', Blockly.JavaScript.ORDER_NONE);
+    let value_endy = Blockly.JavaScript.valueToCode(block, 'endY', Blockly.JavaScript.ORDER_NONE);
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    (function(){
+    ${value_variable}=context.createLinearGradient(${value_startx},${value_starty},${value_endx},${value_endy});
+    ${value_variable}.addColorStop(${value_createlineargradient1.split(',')[0]},${value_createlineargradient1.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createlineargradient2.split(',')[0]},${value_createlineargradient2.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createlineargradient3.split(',')[0]},${value_createlineargradient3.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createlineargradient4.split(',')[0]},${value_createlineargradient4.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createlineargradient5.split(',')[0]},${value_createlineargradient5.split(',')[1]})
+    return ${value_variable}
+    })()
+    `;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['createradialgradient'] = function(block) {
+    let value_variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_NONE);
+    let value_createradialgradient1 = Blockly.JavaScript.valueToCode(block, 'createRadialGradient1', Blockly.JavaScript.ORDER_NONE);
+    let value_createradialgradient2 = Blockly.JavaScript.valueToCode(block, 'createRadialGradient2', Blockly.JavaScript.ORDER_NONE);
+    let value_createradialgradient3 = Blockly.JavaScript.valueToCode(block, 'createRadialGradient3', Blockly.JavaScript.ORDER_NONE);
+    let value_createradialgradient4 = Blockly.JavaScript.valueToCode(block, 'createRadialGradient4', Blockly.JavaScript.ORDER_NONE);
+    let value_createradialgradient5 = Blockly.JavaScript.valueToCode(block, 'createRadialGradient5', Blockly.JavaScript.ORDER_NONE);
+    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_NONE);
+    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_NONE);
+    let value_startr = Blockly.JavaScript.valueToCode(block, 'startR', Blockly.JavaScript.ORDER_NONE);
+    let value_endx = Blockly.JavaScript.valueToCode(block, 'endX', Blockly.JavaScript.ORDER_NONE);
+    let value_endy = Blockly.JavaScript.valueToCode(block, 'endY', Blockly.JavaScript.ORDER_NONE);
+    let value_endr = Blockly.JavaScript.valueToCode(block, 'endR', Blockly.JavaScript.ORDER_NONE);
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    (function(){
+    ${value_variable}=context.createRadialGradient(${value_startx},${value_starty},${value_startr},${value_endx},${value_endy},${value_endr});
+    ${value_variable}.addColorStop(${value_createradialgradient1.split(',')[0]},${value_createradialgradient1.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createradialgradient2.split(',')[0]},${value_createradialgradient2.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createradialgradient3.split(',')[0]},${value_createradialgradient3.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createradialgradient4.split(',')[0]},${value_createradialgradient4.split(',')[1]})
+    ${value_variable}.addColorStop(${value_createradialgradient5.split(',')[0]},${value_createradialgradient5.split(',')[1]})
+    return ${value_variable}
+    })()
+    `;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE];
+};
+Blockly.JavaScript['addcolorstop'] = function(block) {
+    let value_stop = Blockly.JavaScript.valueToCode(block, 'stop', Blockly.JavaScript.ORDER_NONE);
+    let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
+    let arr =[value_stop,value_color];
+    // TODO: Assemble JavaScript into code variable.
+    let code = arr;
+    // TODO: Change ORDER_NONE to the correct strength.
+    return [code, Blockly.JavaScript.ORDER_NONE]
 };

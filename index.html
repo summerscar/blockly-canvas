@@ -53,6 +53,8 @@
             div#right{
                 width: 50%;
                 height: 100%;
+                border:1px solid #EEEEEE;
+                margin-left: 10px;
             }
         </style>
     </head>
@@ -360,9 +362,43 @@
             </category>
             <category name="变量" colour="%{BKY_VARIABLES_HUE}" custom="VARIABLE"></category>
             <category name="方法" colour="%{BKY_PROCEDURES_HUE}" custom="PROCEDURE"></category>
-            <sep gap="20"></sep>
+            <sep gap="50"></sep>
+            <sep gap="50"></sep>
             <category name="初始化" colour="410">
                 <block type="init_canvas"></block>
+            </category>
+            <category name="转换" colour="200">
+                <block type="scale">
+                    <value name="scalewidth">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                    <value name="scaleheight">
+                        <shadow type="math_number">
+                            <field name="NUM">1</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="rotate">
+                    <value name="angle">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="translate">
+                    <value name="X">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="Y">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                </block>
             </category>
             <category name="路径" colour="320">
                 <block type="beginpath">
@@ -520,10 +556,10 @@
                 <block type="fill"></block>
             </category>
             <category name="文本" colour="100">
-                <block type="font">
+                <block type="fillfont">
                     <value name="size">
                         <shadow type="math_number">
-                            <field name="NUM">14</field>
+                            <field name="NUM">20</field>
                         </shadow>
                     </value>
                     <value name="font">
@@ -541,37 +577,163 @@
                             <field name="NUM">50</field>
                         </shadow>
                     </value>
-                </block>
-            </category>
-            <category name="转换" colour="200">
-                <block type="scale">
-                    <value name="scalewidth">
-                        <shadow type="math_number">
-                            <field name="NUM">1</field>
-                        </shadow>
-                    </value>
-                    <value name="scaleheight">
-                        <shadow type="math_number">
-                            <field name="NUM">1</field>
+                    <value name="color">
+                        <shadow type="colour_picker">
+                            <field name="COLOUR">#000000</field>
                         </shadow>
                     </value>
                 </block>
-                <block type="rotate">
-                    <value name="angle">
+                <block type="strokefont">
+                    <value name="size">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">20</field>
                         </shadow>
                     </value>
-                </block>
-                <block type="translate">
+                    <value name="font">
+                        <shadow type="text">
+                            <field name="TEXT">HELLO WORLD</field>
+                        </shadow>
+                    </value>
                     <value name="X">
                         <shadow type="math_number">
-                            <field name="NUM">0</field>
+                            <field name="NUM">50</field>
                         </shadow>
                     </value>
                     <value name="Y">
                         <shadow type="math_number">
+                            <field name="NUM">50</field>
+                        </shadow>
+                    </value>
+                    <value name="color">
+                        <shadow type="colour_picker">
+                            <field name="COLOUR">#000000</field>
+                        </shadow>
+                    </value>
+                </block>
+            </category>
+            <category name="渐变色" colour="180">
+                <block type="addcolorstop">
+                    <value name="stop">
+                        <shadow type="math_number">
                             <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="color">
+                        <shadow type="colour_random">
+                        </shadow>
+                    </value>
+                </block>
+                <block type="createlineargradient">
+                    <value name="createLinearGradient1">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createLinearGradient2">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createLinearGradient3">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createLinearGradient4">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createLinearGradient5">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="startX">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="startY">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="endX">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+                    <value name="endY">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+                </block>
+                <block type="createradialgradient">
+                    <value name="createRadialGradient1">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createRadialGradient2">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createRadialGradient3">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createRadialGradient4">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="createRadialGradient5">
+                        <shadow type="addcolorstop">
+                            <field name="stop">
+                            </field>
+                        </shadow>
+                    </value>
+                    <value name="startX">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="startY">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="startR">
+                        <shadow type="math_number">
+                            <field name="NUM">0</field>
+                        </shadow>
+                    </value>
+                    <value name="endX">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+                    <value name="endY">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
+                        </shadow>
+                    </value>
+                    <value name="endR">
+                        <shadow type="math_number">
+                            <field name="NUM">100</field>
                         </shadow>
                     </value>
                 </block>
@@ -628,10 +790,14 @@
             //显示函数
             function show() {
                 var code = Blockly.JavaScript.workspaceToCode(workspace);
-                document.getElementById('show').innerHTML = code;
-                console.log(code)
+                //document.getElementById('show').innerHTML = code;
+                alert(code)
             }
-
+            function myUpdateFunction(event) {
+                var code = Blockly.JavaScript.workspaceToCode(workspace);
+                document.getElementById('show').innerHTML = code;
+            }
+            workspace.addChangeListener(myUpdateFunction);
             //运行函数
             function run() {
                 Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
