@@ -125,11 +125,11 @@
                 <state relative-caret-position="1717">
                   <caret line="101" column="2" lean-forward="false" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
                   <folding>
-                    <marker date="1502803052911" expanded="true" signature="769:774" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="2491:2496" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="3101:3106" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="4532:4535" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="10445:10450" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="769:774" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="2491:2496" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="3101:3106" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="4532:4535" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="10445:10450" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -154,14 +154,14 @@
           <file leaf-file-name="cosBlocks.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/cosBlocks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="244">
-                  <caret line="291" column="28" lean-forward="false" selection-start-line="291" selection-start-column="28" selection-end-line="291" selection-end-column="28" />
+                <state relative-caret-position="550">
+                  <caret line="384" column="28" lean-forward="false" selection-start-line="384" selection-start-column="28" selection-end-line="384" selection-end-column="28" />
                   <folding>
-                    <marker date="1502803052911" expanded="true" signature="769:774" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="2491:2496" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="3101:3106" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="4532:4535" ph="{...}" />
-                    <marker date="1502803052911" expanded="true" signature="10445:10450" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="769:774" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="2491:2496" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="3101:3106" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="4532:4535" ph="{...}" />
+                    <marker date="1502803096902" expanded="true" signature="10445:10450" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -327,7 +327,7 @@
       <workItem from="1502730513764" duration="534000" />
       <workItem from="1502767855052" duration="19461000" />
       <workItem from="1502788757621" duration="12089000" />
-      <workItem from="1502803022596" duration="33000" />
+      <workItem from="1502803022596" duration="84000" />
     </task>
     <task id="LOCAL-00001" summary="第一版">
       <created>1502799856859</created>
@@ -343,11 +343,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502802396903</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="第二版 修改全局合成 仍然有问题...">
+      <created>1502803067275</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1502803067275</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57253000" />
+    <option name="totallyTimeSpent" value="57304000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -792,14 +799,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cosBlocks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="291" column="28" lean-forward="false" selection-start-line="291" selection-start-column="28" selection-end-line="291" selection-end-column="28" />
+        <state relative-caret-position="550">
+          <caret line="384" column="28" lean-forward="false" selection-start-line="384" selection-start-column="28" selection-end-line="384" selection-end-column="28" />
           <folding>
-            <marker date="1502803052911" expanded="true" signature="769:774" ph="{...}" />
-            <marker date="1502803052911" expanded="true" signature="2491:2496" ph="{...}" />
-            <marker date="1502803052911" expanded="true" signature="3101:3106" ph="{...}" />
-            <marker date="1502803052911" expanded="true" signature="4532:4535" ph="{...}" />
-            <marker date="1502803052911" expanded="true" signature="10445:10450" ph="{...}" />
+            <marker date="1502803096902" expanded="true" signature="769:774" ph="{...}" />
+            <marker date="1502803096902" expanded="true" signature="2491:2496" ph="{...}" />
+            <marker date="1502803096902" expanded="true" signature="3101:3106" ph="{...}" />
+            <marker date="1502803096902" expanded="true" signature="4532:4535" ph="{...}" />
+            <marker date="1502803096902" expanded="true" signature="10445:10450" ph="{...}" />
           </folding>
         </state>
       </provider>

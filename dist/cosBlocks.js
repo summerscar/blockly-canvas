@@ -211,7 +211,7 @@ Blockly.Blocks['strokefont'] = {
         this.appendValueInput("Y").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
         this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("颜色");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("字体").appendField(new Blockly.FieldDropdown([["Arial", "Arial"], ["Microsoft YaHei", "Microsoft YaHei"]]), "font");
-        this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
+        this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("垂直对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("水平对齐").appendField(new Blockly.FieldDropdown([["start", "start"], ["end", "end"], ["center", "center"], ["left", "left"], ["right", "right"]]), "textAlign");
         this.setInputsInline(false);
         this.setPreviousStatement(true, null);

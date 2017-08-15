@@ -382,7 +382,7 @@ Blockly.Blocks['strokefont'] = {
             .appendField(new Blockly.FieldDropdown([["Arial","Arial"], ["Microsoft YaHei","Microsoft YaHei"]]), "font");
         this.appendDummyInput()
             .setAlign(Blockly.ALIGN_CENTRE)
-            .appendField("水平对齐")
+            .appendField("垂直对齐")
             .appendField(new Blockly.FieldDropdown([["alphabetic","alphabetic"], ["top","top"], ["hanging","hanging"], ["middle","middle"], ["ideographic","ideographic"], ["bottom","bottom"]]), "textBaseline ");
         this.appendDummyInput()
             .setAlign(Blockly.ALIGN_CENTRE)
