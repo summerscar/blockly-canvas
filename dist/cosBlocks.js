@@ -151,8 +151,8 @@ Blockly.Blocks['fillfont'] = {
     init: function init() {
         this.appendValueInput("font").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("填充文本");
         this.appendValueInput("size").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("字体大小");
-        this.appendValueInput("X").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("X");
-        this.appendValueInput("Y").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
+        this.appendValueInput("X").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("X");
+        this.appendValueInput("Y").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
         this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("颜色");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("字体").appendField(new Blockly.FieldDropdown([["Arial", "Arial"], ["Microsoft YaHei", "Microsoft YaHei"]]), "font");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("垂直对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
@@ -207,8 +207,8 @@ Blockly.Blocks['strokefont'] = {
     init: function init() {
         this.appendValueInput("font").setCheck("String").setAlign(Blockly.ALIGN_CENTRE).appendField("描边文本");
         this.appendValueInput("size").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("字体大小");
-        this.appendValueInput("X").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("X");
-        this.appendValueInput("Y").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
+        this.appendValueInput("X").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("X");
+        this.appendValueInput("Y").setCheck("Number").setAlign(Blockly.ALIGN_CENTRE).appendField("Y");
         this.appendValueInput("color").setCheck("Colour").setAlign(Blockly.ALIGN_CENTRE).appendField("颜色");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("字体").appendField(new Blockly.FieldDropdown([["Arial", "Arial"], ["Microsoft YaHei", "Microsoft YaHei"]]), "font");
         this.appendDummyInput().setAlign(Blockly.ALIGN_CENTRE).appendField("垂直对齐").appendField(new Blockly.FieldDropdown([["alphabetic", "alphabetic"], ["top", "top"], ["hanging", "hanging"], ["middle", "middle"], ["ideographic", "ideographic"], ["bottom", "bottom"]]), "textBaseline ");
@@ -289,6 +289,48 @@ Blockly.Blocks['createradialgradient'] = {
 Blockly.Blocks['globalcompositeoperation'] = {
     init: function init() {
         this.appendDummyInput().appendField("合成形式").appendField(new Blockly.FieldDropdown([["source-over", "source-over"], ["source-atop", "source-atop"], ["source-in", "source-in"], ["source-out", "source-out"], ["destination-over", "destination-over"], ["destination-atop", "destination-atop"], ["destination-in", "destination-in"], ["destination-out", "destination-out"], ["lighter", "lighter"], ["copy", "copy"], ["xor", "xor"]]), "globalCompositeOperation ");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['requestAnimationFrame'] = {
+    init: function init() {
+        this.appendValueInput("variable").setCheck("String").appendField("输入变量");
+        this.appendStatementInput("requestAnimationFrame").setCheck(null).appendField("requestAnimationFrame");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(75);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['clearrect'] = {
+    init: function init() {
+        this.appendDummyInput().appendField("清空Canvas").appendField("X1").appendField(new Blockly.FieldTextInput("0"), "X1").appendField("Y1").appendField(new Blockly.FieldTextInput("0"), "Y1").appendField("X2").appendField(new Blockly.FieldTextInput("100"), "X2").appendField("Y2").appendField(new Blockly.FieldTextInput("100"), "Y2");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(120);
+        this.setTooltip("");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['clearInterval'] = {
+    init: function init() {
+        this.appendValueInput("variable").setCheck(null).appendField("清空定时器");
+        this.setPreviousStatement(true, null);
+        this.setNextStatement(true, null);
+        this.setColour(230);
+        this.setTooltip("存在问题，只能作用在第一次执行setinterval时有效，否则只能刷新页面");
+        this.setHelpUrl("");
+    }
+};
+Blockly.Blocks['runanimate'] = {
+    init: function init() {
+        this.appendDummyInput().appendField("调用requestanimateframe");
+        this.appendValueInput("variable").setCheck(null).setAlign(Blockly.ALIGN_CENTRE).appendField("输入变量");
         this.setPreviousStatement(true, null);
         this.setNextStatement(true, null);
         this.setColour(230);

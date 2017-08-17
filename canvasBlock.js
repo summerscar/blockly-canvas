@@ -33,7 +33,7 @@ Blockly.JavaScript['beginpath'] = function(block) {
     let dropdown_linecap = block.getFieldValue('lineCap');
     let dropdown_linejoin = block.getFieldValue('lineJoin');
     let value_strokestyle = Blockly.JavaScript.valueToCode(block, 'strokeStyle', Blockly.JavaScript.ORDER_NONE);
-    let value_linewidth = Blockly.JavaScript.valueToCode(block, 'lineWidth', Blockly.JavaScript.ORDER_NONE);
+    let value_linewidth = Blockly.JavaScript.valueToCode(block, 'lineWidth', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.lineCap = '${dropdown_linecap}';
@@ -47,8 +47,8 @@ Blockly.JavaScript['beginpath'] = function(block) {
 
 Blockly.JavaScript['moveto'] = function(block) {
     let value_moveto = Blockly.JavaScript.valueToCode(block, 'moveTo', Blockly.JavaScript.ORDER_NONE);
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.moveTo(${value_x},${value_y});
@@ -58,8 +58,8 @@ Blockly.JavaScript['moveto'] = function(block) {
 
 Blockly.JavaScript['lineto'] = function(block) {
     let value_lineto = Blockly.JavaScript.valueToCode(block, 'lineTo', Blockly.JavaScript.ORDER_NONE);
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     // TODO: Change ORDER_NONE to the correct strength.
     let code = `
@@ -73,7 +73,8 @@ Blockly.JavaScript['stroke'] = function(block) {
     let code =
         `
         context.stroke();
-        context.restore();`;
+        context.restore();
+        context.save();`;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -81,7 +82,8 @@ Blockly.JavaScript['fill'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.fill();
-    context.restore();`;
+    context.restore();
+    context.save();`;
     // TODO: Change ORDER_NONE to the correct strength.
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
@@ -106,11 +108,11 @@ Blockly.JavaScript['beginfillpath'] = function(block) {
 };
 Blockly.JavaScript['arc'] = function(block) {
     let value_arc = Blockly.JavaScript.valueToCode(block, 'arc', Blockly.JavaScript.ORDER_NONE);
-    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_NONE);
-    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_NONE);
-    let value_r = Blockly.JavaScript.valueToCode(block, 'R', Blockly.JavaScript.ORDER_NONE);
-    let value_startangle = Blockly.JavaScript.valueToCode(block, 'startAngle', Blockly.JavaScript.ORDER_NONE);
-    let value_endangle = Blockly.JavaScript.valueToCode(block, 'endAngle', Blockly.JavaScript.ORDER_NONE);
+    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_r = Blockly.JavaScript.valueToCode(block, 'R', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_startangle = Blockly.JavaScript.valueToCode(block, 'startAngle', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_endangle = Blockly.JavaScript.valueToCode(block, 'endAngle', Blockly.JavaScript.ORDER_ATOMIC);
     let value_counterclockwise = Blockly.JavaScript.valueToCode(block, 'counterclockwise', Blockly.JavaScript.ORDER_NONE);
     // TODO: Assemble JavaScript into code variable.
     let code =`
@@ -121,10 +123,10 @@ Blockly.JavaScript['arc'] = function(block) {
 };
 Blockly.JavaScript['rect'] = function(block) {
     let value_react = Blockly.JavaScript.valueToCode(block, 'react', Blockly.JavaScript.ORDER_NONE);
-    let value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_NONE);
-    let value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_NONE);
-    let value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_NONE);
-    let value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_NONE);
+    let value_x1 = Blockly.JavaScript.valueToCode(block, 'X1', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y1 = Blockly.JavaScript.valueToCode(block, 'Y1', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_x2 = Blockly.JavaScript.valueToCode(block, 'X2', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y2 = Blockly.JavaScript.valueToCode(block, 'Y2', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.rect(${value_x1},${value_y1},${value_x2},${value_y2});
@@ -136,10 +138,10 @@ Blockly.JavaScript['rect'] = function(block) {
 
 Blockly.JavaScript['quadraticcurveto'] = function(block) {
     let value_quadraticcurveto = Blockly.JavaScript.valueToCode(block, 'quadraticCurveTo', Blockly.JavaScript.ORDER_NONE);
-    let value_cpx = Blockly.JavaScript.valueToCode(block, 'cpx', Blockly.JavaScript.ORDER_NONE);
-    let value_cpy = Blockly.JavaScript.valueToCode(block, 'cpy', Blockly.JavaScript.ORDER_NONE);
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_cpx = Blockly.JavaScript.valueToCode(block, 'cpx', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_cpy = Blockly.JavaScript.valueToCode(block, 'cpy', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.quadraticCurveTo(${value_cpx},${value_cpy},${value_x},${value_y});
@@ -149,11 +151,11 @@ Blockly.JavaScript['quadraticcurveto'] = function(block) {
 };
 Blockly.JavaScript['arcto'] = function(block) {
     let value_arcto = Blockly.JavaScript.valueToCode(block, 'arcTo', Blockly.JavaScript.ORDER_NONE);
-    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_NONE);
-    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_NONE);
-    let value_endx = Blockly.JavaScript.valueToCode(block, 'endX', Blockly.JavaScript.ORDER_NONE);
-    let value_endy = Blockly.JavaScript.valueToCode(block, 'endY', Blockly.JavaScript.ORDER_NONE);
-    let value_r = Blockly.JavaScript.valueToCode(block, 'R', Blockly.JavaScript.ORDER_NONE);
+    let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_endx = Blockly.JavaScript.valueToCode(block, 'endX', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_endy = Blockly.JavaScript.valueToCode(block, 'endY', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_r = Blockly.JavaScript.valueToCode(block, 'R', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.arcTo(${value_startx},${value_starty},${value_endx},${value_endy},${value_r})
@@ -164,9 +166,9 @@ Blockly.JavaScript['arcto'] = function(block) {
 };
 Blockly.JavaScript['fillfont'] = function(block) {
     let value_font = Blockly.JavaScript.valueToCode(block, 'font', Blockly.JavaScript.ORDER_NONE);
-    let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_NONE);
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
     let dropdown_font = block.getFieldValue('font');
     let dropdown_textbaseline_ = block.getFieldValue('textBaseline ');
@@ -178,14 +180,16 @@ Blockly.JavaScript['fillfont'] = function(block) {
     context.font="${value_size}px ${dropdown_font}";
     context.fillStyle = ${value_color};
     context.fillText(${value_font},${value_x},${value_y});
+    context.restore();
+    context.save();
     `;
     return code;
 };
 Blockly.JavaScript['strokefont'] = function(block) {
     let value_font = Blockly.JavaScript.valueToCode(block, 'font', Blockly.JavaScript.ORDER_NONE);
-    let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_NONE);
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_size = Blockly.JavaScript.valueToCode(block, 'size', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
     let dropdown_font = block.getFieldValue('font');
     let dropdown_textbaseline_ = block.getFieldValue('textBaseline ');
@@ -197,12 +201,14 @@ Blockly.JavaScript['strokefont'] = function(block) {
     context.font="${value_size}px ${dropdown_font}";
     context.strokeStyle = ${value_color};
     context.strokeText(${value_font},${value_x},${value_y});
+    context.restore();
+    context.save();
     `;
     return code;
 };
 Blockly.JavaScript['scale'] = function(block) {
-    let value_scalewidth = Blockly.JavaScript.valueToCode(block, 'scalewidth', Blockly.JavaScript.ORDER_NONE);
-    let value_scaleheight = Blockly.JavaScript.valueToCode(block, 'scaleheight', Blockly.JavaScript.ORDER_NONE);
+    let value_scalewidth = Blockly.JavaScript.valueToCode(block, 'scalewidth', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_scaleheight = Blockly.JavaScript.valueToCode(block, 'scaleheight', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.scale(${value_scalewidth},${value_scaleheight});
@@ -210,7 +216,7 @@ Blockly.JavaScript['scale'] = function(block) {
     return code;
 };
 Blockly.JavaScript['rotate'] = function(block) {
-    let value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_NONE);
+    let value_angle = Blockly.JavaScript.valueToCode(block, 'angle', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.rotate(${value_angle}*Math.PI/180);
@@ -218,8 +224,8 @@ Blockly.JavaScript['rotate'] = function(block) {
     return code;
 };
 Blockly.JavaScript['translate'] = function(block) {
-    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_NONE);
-    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_NONE);
+    let value_x = Blockly.JavaScript.valueToCode(block, 'X', Blockly.JavaScript.ORDER_ATOMIC);
+    let value_y = Blockly.JavaScript.valueToCode(block, 'Y', Blockly.JavaScript.ORDER_ATOMIC);
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.translate(${value_x},${value_y});
@@ -231,7 +237,7 @@ Blockly.JavaScript['createlineargradient'] = function(block) {
     let value_createlineargradient2 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient2', Blockly.JavaScript.ORDER_NONE);
     let value_createlineargradient3 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient3', Blockly.JavaScript.ORDER_NONE);
     let value_createlineargradient4 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient4', Blockly.JavaScript.ORDER_NONE);
-    let value_createlineargradient5 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient4', Blockly.JavaScript.ORDER_NONE);
+    let value_createlineargradient5 = Blockly.JavaScript.valueToCode(block, 'createLinearGradient5', Blockly.JavaScript.ORDER_NONE);
     let value_variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_NONE);
     let value_startx = Blockly.JavaScript.valueToCode(block, 'startX', Blockly.JavaScript.ORDER_NONE);
     let value_starty = Blockly.JavaScript.valueToCode(block, 'startY', Blockly.JavaScript.ORDER_NONE);
@@ -281,7 +287,7 @@ Blockly.JavaScript['createradialgradient'] = function(block) {
     return [code, Blockly.JavaScript.ORDER_NONE];
 };
 Blockly.JavaScript['addcolorstop'] = function(block) {
-    let value_stop = Blockly.JavaScript.valueToCode(block, 'stop', Blockly.JavaScript.ORDER_NONE);
+    let value_stop = Blockly.JavaScript.valueToCode(block, 'stop', Blockly.JavaScript.ORDER_ATOMIC);
     let value_color = Blockly.JavaScript.valueToCode(block, 'color', Blockly.JavaScript.ORDER_NONE);
     let arr =[value_stop,value_color];
     // TODO: Assemble JavaScript into code variable.
@@ -294,6 +300,43 @@ Blockly.JavaScript['globalcompositeoperation'] = function(block) {
     // TODO: Assemble JavaScript into code variable.
     let code = `
     context.globalcompositeoperation = "${dropdown_globalcompositeoperation_}";
+    `;
+    return code;
+};
+Blockly.JavaScript['requestAnimationFrame'] = function(block) {
+    let value_name = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_NONE);
+    let statements_setinterval = Blockly.JavaScript.statementToCode(block, 'requestAnimationFrame');
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    function ${value_name} (){${statements_setinterval}}
+    requestAnimationFrame(${value_name});
+    `;
+    return code;
+};
+Blockly.JavaScript['clearrect'] = function(block) {
+    let text_x1 = block.getFieldValue('X1');
+    let text_y1 = block.getFieldValue('Y1');
+    let text_x2 = block.getFieldValue('X2');
+    let text_y2 = block.getFieldValue('Y2');
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    context.clearRect(${text_x1},${text_y1},${text_x2},${text_y2})
+    `;
+    return code;
+};
+Blockly.JavaScript['clearInterval'] = function(block) {
+    let value_variable = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_ATOMIC);
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    clearInterval(${value_variable})
+    `;
+    return code;
+};
+Blockly.JavaScript['runanimate'] = function(block) {
+    let value_name = Blockly.JavaScript.valueToCode(block, 'variable', Blockly.JavaScript.ORDER_NONE);
+    // TODO: Assemble JavaScript into code variable.
+    let code = `
+    requestAnimationFrame(${value_name})
     `;
     return code;
 };
