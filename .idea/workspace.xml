@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4e089ce0-52f9-4aad-8c05-d6aa307aea4e" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/canvasBlock.js.map" afterPath="$PROJECT_DIR$/dist/canvasBlock.js.map" />
+    <list default="true" id="4e089ce0-52f9-4aad-8c05-d6aa307aea4e" name="Default" comment="修改了下返回参数，增加requestaminateframe动画功能">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/canvasBlock.js" afterPath="$PROJECT_DIR$/canvasBlock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cosBlocks.js" afterPath="$PROJECT_DIR$/cosBlocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/canvasBlock.js" afterPath="$PROJECT_DIR$/dist/canvasBlock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cosBlocks.js" afterPath="$PROJECT_DIR$/dist/cosBlocks.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/cosBlocks.js.map" afterPath="$PROJECT_DIR$/dist/cosBlocks.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,11 +45,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="canvasBlock.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="canvasBlock.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/canvasBlock.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="302" column="6" lean-forward="true" selection-start-line="302" selection-start-column="6" selection-end-line="302" selection-end-column="6" />
+                <state relative-caret-position="279">
+                  <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="25" />
                   <folding />
                 </state>
               </provider>
@@ -65,43 +58,18 @@
           <file leaf-file-name="canvasBlock.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/canvasBlock.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-1819">
+                <state relative-caret-position="731">
                   <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-                  <folding>
-                    <marker date="1502967556056" expanded="true" signature="1449:2247" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="2298:2791" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="2842:3390" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="3141:3245" ph="//..." />
-                    <marker date="1502967556056" expanded="true" signature="3441:3702" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="3750:3997" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="4050:4374" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="4431:4832" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="4879:5960" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="6008:6797" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="6858:7636" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="7685:8621" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="8673:9793" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="9847:10971" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="11020:11418" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="11468:11723" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="11776:12121" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="12185:14460" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="14524:17041" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="17097:17522" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="17590:17869" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="17934:18352" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="18405:18771" ph="{...}" />
-                    <marker date="1502967556056" expanded="true" signature="18828:19078" ph="{...}" />
-                  </folding>
+                  <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+          <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="629" column="31" lean-forward="false" selection-start-line="629" selection-start-column="31" selection-end-line="629" selection-end-column="31" />
+                <state relative-caret-position="3179">
+                  <caret line="627" column="51" lean-forward="false" selection-start-line="627" selection-start-column="51" selection-end-line="627" selection-end-column="51" />
                   <folding>
                     <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                     <element signature="n#category#0;n#xml#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -188,6 +156,7 @@
                     <marker date="1502962526145" expanded="true" signature="2491:2496" ph="{...}" />
                     <marker date="1502962526145" expanded="true" signature="3101:3106" ph="{...}" />
                     <marker date="1502962526145" expanded="true" signature="4532:4535" ph="{...}" />
+                    <marker date="1502962526145" expanded="true" signature="13828:13833" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -196,7 +165,7 @@
           <file leaf-file-name="cosBlocks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/dist/cosBlocks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-3315">
+                <state relative-caret-position="0">
                   <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
@@ -287,6 +256,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -331,15 +302,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/node_modules/.bin/babel" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../wechatkoa" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
   </component>
@@ -373,7 +342,8 @@
       <workItem from="1502767855052" duration="19461000" />
       <workItem from="1502788757621" duration="12089000" />
       <workItem from="1502803022596" duration="183000" />
-      <workItem from="1502951882310" duration="13035000" />
+      <workItem from="1502951882310" duration="13891000" />
+      <workItem from="1503144589460" duration="48000" />
     </task>
     <task id="LOCAL-00001" summary="第一版">
       <created>1502799856859</created>
@@ -403,11 +373,18 @@
       <option name="project" value="LOCAL" />
       <updated>1502803112717</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="修改了下返回参数，增加requestaminateframe动画功能">
+      <created>1502969919379</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1502969919379</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70438000" />
+    <option name="totallyTimeSpent" value="71342000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -420,12 +397,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14818764" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14978679" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11521739" sideWeight="0.4968017" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11521739" sideWeight="0.50319827" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -440,6 +415,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32934782" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -472,7 +448,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="第一版" />
     <MESSAGE value="第二版 修改全局合成 仍然有问题..." />
-    <option name="LAST_COMMIT_MESSAGE" value="第二版 修改全局合成 仍然有问题..." />
+    <MESSAGE value="修改了下返回参数，增加requestaminateframe动画功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改了下返回参数，增加requestaminateframe动画功能" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -523,9 +500,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -765,9 +739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="33" column="39" lean-forward="false" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -837,7 +808,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/cosBlocks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3315">
+        <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
@@ -845,41 +816,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/dist/canvasBlock.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1819">
+        <state relative-caret-position="731">
           <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
-          <folding>
-            <marker date="1502967556056" expanded="true" signature="1449:2247" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="2298:2791" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="2842:3390" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="3141:3245" ph="//..." />
-            <marker date="1502967556056" expanded="true" signature="3441:3702" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="3750:3997" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="4050:4374" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="4431:4832" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="4879:5960" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="6008:6797" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="6858:7636" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="7685:8621" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="8673:9793" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="9847:10971" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="11020:11418" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="11468:11723" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="11776:12121" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="12185:14460" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="14524:17041" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="17097:17522" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="17590:17869" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="17934:18352" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="18405:18771" ph="{...}" />
-            <marker date="1502967556056" expanded="true" signature="18828:19078" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/cosBlocks.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1717">
-          <caret line="101" column="2" lean-forward="false" selection-start-line="101" selection-start-column="2" selection-end-line="101" selection-end-column="2" />
+        <state relative-caret-position="703">
+          <caret line="610" column="22" lean-forward="true" selection-start-line="610" selection-start-column="22" selection-end-line="610" selection-end-column="22" />
           <folding>
             <marker date="1502962526145" expanded="true" signature="769:774" ph="{...}" />
             <marker date="1502962526145" expanded="true" signature="2491:2496" ph="{...}" />
@@ -890,18 +836,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/canvasBlock.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="302" column="6" lean-forward="true" selection-start-line="302" selection-start-column="6" selection-end-line="302" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="629" column="31" lean-forward="false" selection-start-line="629" selection-start-column="31" selection-end-line="629" selection-end-column="31" />
+        <state relative-caret-position="3179">
+          <caret line="627" column="51" lean-forward="false" selection-start-line="627" selection-start-column="51" selection-end-line="627" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#category#0;n#xml#0;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -918,6 +856,14 @@
             <element signature="n#block#3;n#category#11;n#xml#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#block#4;n#category#11;n#xml#0;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/canvasBlock.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="30" column="25" lean-forward="false" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>

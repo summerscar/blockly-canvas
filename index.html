@@ -8,6 +8,7 @@
         <script src="javascript_compressed.js"></script>
         <script src="./dist/canvasBlock.js"></script>
         <script src="./cosBlocks.js"></script>
+        <script src="https://togetherjs.com/togetherjs-min.js"></script>
         <style>
             html,body{
                 height: 100%;
@@ -64,6 +65,7 @@
                 <div class="btn">
                     <button type="button" onclick="show()">显示</button>
                     <button type="button" onclick="run()">运行</button>
+                    <button onclick="TogetherJS(this); return false;">Start TogetherJS</button>
                 </div>
                 <div id="show" style="width:100%;padding: 0 20px;font-size: 12px;overflow: auto"></div>
             </div>
@@ -757,6 +759,7 @@
     </body>
 
         <script>
+            var beUpdatedTime = 0
             //div大小变化监听
             var blocklyArea = document.getElementById('blocklyArea');
             var blocklyDiv = document.getElementById('blocklyDiv');
@@ -800,11 +803,42 @@
                 //document.getElementById('show').innerHTML = code;
                 alert(code)
             }
+
+            // ---------------------------
             function myUpdateFunction(event) {
+                //TODO: 这个change触发需要增加判断
                 var code = Blockly.JavaScript.workspaceToCode(workspace);
                 document.getElementById('show').innerHTML = code;
+                // 发送xml
+                
+                // 
+                if (+new Date() - beUpdatedTime < 1000 / 60) {
+                    return
+                }
+                var xml = Blockly.Xml.workspaceToDom(workspace);
+                var xml_text = Blockly.Xml.domToText(xml);
+                // var svgContent = document.getElementsByClassName('blocklySvg')[0].innerHTML
+                TogetherJS.send({
+                    type: "blockly-change",
+                    data: xml_text
+                })
+                console.log('change')
             }
+
             workspace.addChangeListener(myUpdateFunction);
+            TogetherJS.hub.on("blockly-change", function (msg) {
+                if (! msg.sameUrl) {
+                    return;
+                }
+                console.log('被控端接收到信息', msg)
+                workspace.clear()
+                var xml = Blockly.Xml.textToDom(msg.data);
+                Blockly.Xml.domToWorkspace(xml, workspace);
+                // document.getElementsByClassName('blocklySvg')[0].innerHTML = msg.data
+                beUpdatedTime = +new Date()
+            });
+            //-----------------------------
+
             //运行函数
             function run() {
                 Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
@@ -824,6 +858,12 @@
                     console.log(e);
                 }
             }
+
+            (function () {
+                SVGAnimatedString.prototype.indexOf = function(){
+                    return String.prototype.indexOf.apply(this.baseVal, arguments); 
+                };
+            })()
 
 
         </script>
