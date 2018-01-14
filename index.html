@@ -804,7 +804,7 @@
                 alert(code)
             }
 
-            // ---------------------------
+            // --------------------------- together.js 部分
             function myUpdateFunction(event) {
                 //TODO: 这个change触发需要增加判断
                 var code = Blockly.JavaScript.workspaceToCode(workspace);
@@ -824,8 +824,8 @@
                 })
                 console.log('change')
             }
-
             workspace.addChangeListener(myUpdateFunction);
+
             TogetherJS.hub.on("blockly-change", function (msg) {
                 if (! msg.sameUrl) {
                     return;
@@ -837,10 +837,25 @@
                 // document.getElementsByClassName('blocklySvg')[0].innerHTML = msg.data
                 beUpdatedTime = +new Date()
             });
+
+            TogetherJS.hub.on("runBtn-click", function (msg) {
+                if (! msg.sameUrl) {
+                    return;
+                }
+                console.log('被控端接收到runClick信息')
+                run(true)   // 传个true表示是远程调用
+            });
             //-----------------------------
 
             //运行函数
-            function run() {
+            function run(boolean) {
+                // 如果不是远程调用run则发送runclick的事件
+                if(!boolean) {
+                    TogetherJS.send({
+                        type: "runBtn-click"
+                    })
+                }
+
                 Blockly.JavaScript.INFINITE_LOOP_TRAP = '  checkTimeout();\n';
                 var timeouts = 0;
                 var checkTimeout = function() {
