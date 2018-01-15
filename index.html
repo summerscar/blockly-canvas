@@ -818,10 +818,12 @@
                 var xml = Blockly.Xml.workspaceToDom(workspace);
                 var xml_text = Blockly.Xml.domToText(xml);
                 // var svgContent = document.getElementsByClassName('blocklySvg')[0].innerHTML
-                TogetherJS.send({
-                    type: "blockly-change",
-                    data: xml_text
-                })
+                if (TogetherJS.require) {
+                    TogetherJS.send({
+                        type: "blockly-change",
+                        data: xml_text
+                    })
+                }
                 console.log('change')
             }
             workspace.addChangeListener(myUpdateFunction);
@@ -850,7 +852,7 @@
             //运行函数
             function run(boolean) {
                 // 如果不是远程调用run则发送runclick的事件
-                if(!boolean) {
+                if(!boolean && TogetherJS.require) {
                     TogetherJS.send({
                         type: "runBtn-click"
                     })
