@@ -759,6 +759,7 @@
     </body>
 
         <script>
+            let togetherJSRun = false
             var beUpdatedTime = 0
             //div大小变化监听
             var blocklyArea = document.getElementById('blocklyArea');
@@ -805,6 +806,14 @@
             }
 
             // --------------------------- together.js 部分
+            TogetherJS.on("ready", function () {
+                togetherJSRun = true
+            })
+            TogetherJS.on("close", function () {
+                togetherJSRun = false
+            })
+
+
             function myUpdateFunction(event) {
                 //TODO: 这个change触发需要增加判断
                 var code = Blockly.JavaScript.workspaceToCode(workspace);
@@ -812,13 +821,13 @@
                 // 发送xml
                 
                 // 
-                if (+new Date() - beUpdatedTime < 1000 / 60) {
+                if (+new Date() - beUpdatedTime < 500) {
                     return
                 }
                 var xml = Blockly.Xml.workspaceToDom(workspace);
                 var xml_text = Blockly.Xml.domToText(xml);
                 // var svgContent = document.getElementsByClassName('blocklySvg')[0].innerHTML
-                if (TogetherJS.require) {
+                if (togetherJSRun) {
                     TogetherJS.send({
                         type: "blockly-change",
                         data: xml_text
@@ -852,7 +861,7 @@
             //运行函数
             function run(boolean) {
                 // 如果不是远程调用run则发送runclick的事件
-                if(!boolean && TogetherJS.require) {
+                if(!boolean && togetherJSRun) {
                     TogetherJS.send({
                         type: "runBtn-click"
                     })
